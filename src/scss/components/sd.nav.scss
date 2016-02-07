@@ -1,0 +1,43 @@
+.sd-nav{
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin:0;
+  }
+  li {
+    padding: 15px;
+    border-bottom: 1px solid rgb(50, 50, 50);
+    &.active, &:hover {
+      background-color: rgb(70, 70, 70);
+      a {
+        color: rgb(255, 255, 255);
+      }
+    }
+  }
+  a {
+    position: relative;
+    padding: 20px;
+    margin: -20px;
+  }
+
+}
+
+.sd-nav.sd-nav-row {
+  ul {
+    float: left;
+    margin-left: -20px;
+    li {
+      border-bottom-width: 0;
+      padding: 0 15px;
+      height: $header-height;
+      display: inline-block;
+      line-height: $header-height;
+      &.active, &:hover {
+        background-color: $accent-color;
+        a {
+          color: $accent-color-contrast;
+        }
+      }
+    }
+  }
+}

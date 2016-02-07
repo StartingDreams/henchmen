@@ -7,8 +7,25 @@
         <link rel="stylesheet" href="/css/styles.css">
     </head>
     <body ng-cloak class="container-fluid">
-        <sd-header></sd-header>
-        <div id="body" ui-view="body" autoscroll="true"></div>
+        <sd-header>
+            <sd-nav>
+                <sd-nav-item show-label="false" label="Home" icon="fa-home" route="home"></sd-nav-item>
+                <sd-nav-item show-label="false" label="Dashboard" icon="fa-dashboard" route="dashboard"></sd-nav-item>
+                <sd-nav-item show-label="false" label="Henchmen" icon="fa-users" route="henchmen"></sd-nav-item>
+                <sd-nav-item show-label="false" label="Quests" icon="fa-fort-awesome" route="quests"></sd-nav-item>
+            </sd-nav>
+        </sd-header>
+        <div class="body-container" sd-sidebar-status>
+            <sd-sidebar>
+                <sd-nav row="false">
+                    <sd-nav-item label="Home" icon="fa-home" route="home"></sd-nav-item>
+                    <sd-nav-item label="Dashboard" icon="fa-dashboard" route="dashboard"></sd-nav-item>
+                    <sd-nav-item label="Henchmen" icon="fa-users" route="henchmen"></sd-nav-item>
+                    <sd-nav-item label="Quests" icon="fa-fort-awesome" route="quests"></sd-nav-item>
+                </sd-nav>
+            </sd-sidebar>
+            <div ui-view="body"><h1>This is in the body!</h1></div>
+        </div>
         <sd-footer></sd-footer>
         <script src="/js/bundle.js"></script>
     </body>

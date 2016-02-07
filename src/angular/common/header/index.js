@@ -1,9 +1,7 @@
-
-
 import headerDirective from "./header.directive";
 
-function header(module) {
+function moduleLoader(module) {
     headerDirective(module);
 }
 
-export default header;
+export default moduleLoader;

@@ -1,10 +1,10 @@
-import template from "./header.html";
+import template from "./sidebar.html";
 
-function headerDirective(module) {
+function sidebarDirective(module) {
 
-    module.directive("sdHeader", sdHeader);
+    module.directive("sdSidebar", sdSidebar);
 
-    function sdHeader() {
+    function sdSidebar() {
 
         var controller = function() {
             var vm = this;
@@ -23,4 +23,4 @@ function headerDirective(module) {
 
 }
 
-export default headerDirective;
+export default sidebarDirective;

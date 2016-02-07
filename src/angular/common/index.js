@@ -1,8 +1,12 @@
 import angular from "angular";
 import header from "./header";
+import nav from "./nav";
+import sidebar from "./sidebar";
 
-var module = angular.module("sdCommon", []);
+var sdCommonModule = angular.module("sdCommon", []);
 
-header(module);
+header(sdCommonModule);
+nav(sdCommonModule);
+sidebar(sdCommonModule);
 
-export default module;
+export default sdCommonModule;

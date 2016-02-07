@@ -2,8 +2,12 @@ header{
   background: #000;
   border-bottom: 2px solid $accent-color;
   padding: 0 20px;
-  ul {
-    display: inline-block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 
-  }
+  @include clearfix();
+
+
 }

@@ -1,1 +1,14 @@
-$accent-color: rgb(65, 65, 255);
+$accent-color: rgb(16, 16, 225);
+$accent-color-contrast: rgb(255, 255, 255);
+
+$header-height: 55px;
+
+
+// Layout breakpoints
+$bp-xs-min: 480px;
+$bp-sm-min: 768px;
+$bp-md-min: 992px;
+$bp-lg-min: 1200px;
+$bp-xs-max: ($bp-sm-min - 1);
+$bp-sm-max: ($bp-md-min - 1);
+$bp-md-max: ($bp-lg-min - 1);

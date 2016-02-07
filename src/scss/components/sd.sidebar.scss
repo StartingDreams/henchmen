@@ -1,0 +1,24 @@
+.sd-sidebar {
+  width: 250px;
+  border: 2px solid rgb(4, 4, 52);
+  background: #222;
+  border-top-width: 0;
+  height: 100%;
+  overflow-y: auto;
+  float:left;
+}
+
+.sd-sidebar-toggle {
+  margin: 8px 0;
+  &:focus, &:hover {
+    color: $accent-color;
+    outline-color: $accent-color;
+    background: $accent-color-contrast;
+  }
+}
+
+@media all and (min-width: $bp-sm-min) {
+  .sd-sidebar-toggle {
+    display: none;
+  }
+}
