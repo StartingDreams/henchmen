@@ -1,3 +1,14 @@
 <div class="dashboard">
-    <sdh-widgets widgets="vm.widgets"></sdh-widgets>
+    <div sdh-widgets>
+        <li gridster-item size-x="12" size-y="2">
+            <sdh-status-widget></sdh-status-widget>
+        </li>
+        <li ng-repeat="quest in vm.game.quests" gridster-item size-x="4" size-y="4">
+            <sdh-quest-widget quest="quest"></sdh-quest-widget>
+        </li>
+        <li ng-repeat="henchman in vm.game.henchmen" gridster-item size-x="4" size-y="4">
+            <sdh-quest-widget henchman="henchman"></sdh-quest-widget>
+        </li>
+    </div>
+
 </div>

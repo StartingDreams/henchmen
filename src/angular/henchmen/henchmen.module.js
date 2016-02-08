@@ -16,4 +16,9 @@ sdhHenchmen.config(function(sdhNavProvider, $stateProvider) {
 
 });
 
+sdhHenchmen.run(function(sdhQuestService, sdhGameState) {
+    sdhGameState.init();
+    sdhQuestService.init();
+});
+
 export default sdhHenchmen;

@@ -7,28 +7,22 @@ function widgetsDirective(module) {
     function sdhWidgets() {
 
         var controller = function($scope) {
-            var vm = this;
-            vm.widgets = $scope.widgets;
-
-            vm.gridsterOpts = {
+            $scope.gridsterOpts = {
                 columns: 12,
                 margins: [20, 20],
                 outerMargin: true,
                 pushing: true,
                 floating: true,
                 swapping: false,
-                mobileModeEnabled: true
+                resizable: {enabled: false},
+                draggable: {enabled: false}
             };
         };
 
         return {
             controller: controller,
-            restrict: "E",
-            controllerAs: "vm",
-            replace: true,
-            scope: {
-                widgets: "="
-            },
+            transclude: true,
+            restrict: "A",
             template: template
         };
     }

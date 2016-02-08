@@ -1,22 +1,20 @@
-import template from "./dashboard.html";
+import template from "./status.html";
 
-function dashboardDirective(module) {
+function sdhStatusWidgetDirective(module) {
 
-    module.directive("sdhDashboard", sdDashboard);
+    module.directive("sdhStatusWidget", sdhStatusWidget);
 
-    function sdDashboard() {
+    function sdhStatusWidget() {
 
         var controller = function($scope, sdhGameState) {
             var vm = this;
             vm.game = sdhGameState.game;
-            console.log($scope.game);
         };
 
         return {
             controller: controller,
-            controllerAs: "vm",
-            scope: {},
             restrict: "E",
+            controllerAs: "vm",
             replace: true,
             template: template
         };
@@ -24,4 +22,4 @@ function dashboardDirective(module) {
 
 }
 
-export default dashboardDirective;
+export default sdhStatusWidgetDirective;

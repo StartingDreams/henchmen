@@ -6,18 +6,13 @@ function widgetDirective(module) {
 
     function sdhWidget() {
 
-        var controller = function($scope) {
-            var vm = this;
-            vm.widget = $scope.widget;
-        };
-
         return {
-            controller: controller,
-            restrict: "E",
-            controllerAs: "vm",
+            restrict: "A",
+            transclude: true,
             replace: true,
             scope: {
-                widget: "="
+                title: "=",
+                titleCenter: "="
             },
             template: template
         };
