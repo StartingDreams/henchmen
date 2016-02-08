@@ -5,9 +5,8 @@
     margin:0;
   }
   li {
-    padding: 15px;
     border-bottom: 1px solid rgb(50, 50, 50);
-    &.active, &:hover {
+    &.active, &:hover, &:focus {
       background-color: rgb(70, 70, 70);
       a {
         color: rgb(255, 255, 255);
@@ -16,8 +15,8 @@
   }
   a {
     position: relative;
-    padding: 20px;
-    margin: -20px;
+    padding: 15px;
+    display: block;
   }
 
 }
@@ -26,18 +25,21 @@
   ul {
     float: left;
     margin-left: -20px;
-    li {
-      border-bottom-width: 0;
-      padding: 0 15px;
-      height: $header-height;
-      display: inline-block;
-      line-height: $header-height;
-      &.active, &:hover {
-        background-color: $accent-color;
-        a {
-          color: $accent-color-contrast;
-        }
+  }
+  li {
+    border-bottom-width: 0;
+    height: $header-height;
+    display: inline-block;
+    line-height: $header-height;
+    &.active, &:hover, &:focus {
+      background-color: $accent-color;
+      a {
+        color: $accent-color-contrast;
       }
     }
   }
+  a {
+    padding: 0 15px;
+  }
+
 }

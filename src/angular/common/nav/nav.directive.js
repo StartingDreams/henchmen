@@ -11,17 +11,10 @@ function navDirective(module) {
         };
 
         var controller = function($scope, $rootScope) {
-            var vm = this;
 
+            var vm = this;
             vm.row = $scope.row !== "false";
 
-            vm.setActiveElement = function(element) {
-                vm.activeElement = element;
-            };
-
-            vm.setRoute = function(route) {
-                $rootScope.$broadcast("sd-nav-item-selected", {route: route});
-            };
         };
 
         return {

@@ -2,23 +2,44 @@ function sidebarToggleDirective(module) {
 
     module.directive("sdSidebarStatus", sdSidebarToggle);
 
-    function sdSidebarToggle() {
+    function sdSidebarToggle($animate) {
 
-        var link = function(scope, element, attr, ctrl) {
+        var link = function(scope, element) {
 
-            scope.showSidebar = false;
+            var visible = false;
 
-            scope.$on("sd-sidebar-toggle", function(event) {
-                scope.showSidebar = !scope.showSidebar;
-                element.toggleClass("sidebar-open", scope.showSidebar);
+            var isVisisble = function() {
+                return visible;
+            };
+
+            scope.$on("sd-sidebar-toggle", function() {
+                visible = !visible;
+            });
+
+            scope.$on("sd-sidebar-close", function() {
+                visible = false;
+            });
+
+            scope.$on("sd-nav-item-selected", function() {
+                visible = false;
+            });
+
+            scope.$on("$stateChangeStart",function() {
+                visible = false;
+            });
+
+            scope.$watch(isVisisble, function() {
+                // TODO: animation not working - only the main class is added
+                // $animate[ visible ? "addClass" : "removeClass"](element, "sd-slide");
+                element.toggleClass("sidebar-open", visible);
             });
 
         };
 
         return {
+            priority: 0,
             link: link,
-            restrict: "A",
-            controllerAs: "vm"
+            restrict: "A"
         };
     }
 

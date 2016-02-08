@@ -7,6 +7,7 @@ module.exports = {
     entry: [
         "bootstrap-loader",
         "font-awesome-webpack",
+        "./node_modules/angular-gridster/dist/angular-gridster.min.css",
         "./src/angular/index",
         "./src/scss/styles.scss"
     ],
@@ -19,7 +20,8 @@ module.exports = {
         new ExtractTextPlugin("./css/styles.css")
     ],
     devServer: {
-        contentBase: "src/html"
+        contentBase: "src/html",
+        historyApiFallback: true
     },
     resolve: {
         extensions: ["", ".js"]
@@ -42,6 +44,11 @@ module.exports = {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader"),
                 exclude: /node_modules/
+            },
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract("style-loader", "css-loader"),
+                include: /node_modules/
             },
             {
                 test: /\.scss$/,

@@ -1,10 +1,12 @@
 .body-container {
   display:block;
   margin-left:-250px;
-  transition: margin 0.4s ease 0s;
   height: 100%;
   padding: 57px 0 0 0;
   box-sizing: border-box;
+  .body {
+    margin-left: 250px;
+  }
   &.sidebar-open{
     margin-left: 0;
     margin-right: -240px;
@@ -16,6 +18,7 @@
   .body-container {
     margin-left: 0;
     margin-right: 0;
+
     &.sidebar-open{
       margin-left: 0;
       margin-right: 0;

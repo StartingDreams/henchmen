@@ -1,0 +1,17 @@
+.sd-widget-header {
+  position: relative;
+  padding: 10px;
+  background: rgb(66, 66, 255);
+  color: #fff;
+  border-bottom: 1px solid rgb(10, 10, 100);
+  h1,h2,h3 {
+    margin: 0;
+    font-size: 20px;
+  }
+}
+
+.sd-widget-header-buttons {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}

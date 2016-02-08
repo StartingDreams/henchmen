@@ -5,28 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <title>Henchmen</title>
         <link rel="stylesheet" href="/css/styles.css">
+        <base href="/">
     </head>
     <body ng-cloak class="container-fluid">
         <sd-header>
-            <sd-nav>
-                <sd-nav-item show-label="false" label="Home" icon="fa-home" route="home"></sd-nav-item>
-                <sd-nav-item show-label="false" label="Dashboard" icon="fa-dashboard" route="dashboard"></sd-nav-item>
-                <sd-nav-item show-label="false" label="Henchmen" icon="fa-users" route="henchmen"></sd-nav-item>
-                <sd-nav-item show-label="false" label="Quests" icon="fa-fort-awesome" route="quests"></sd-nav-item>
-            </sd-nav>
+            <div ui-view="navbar"></div>
         </sd-header>
         <div class="body-container" sd-sidebar-status>
             <sd-sidebar>
-                <sd-nav row="false">
-                    <sd-nav-item label="Home" icon="fa-home" route="home"></sd-nav-item>
-                    <sd-nav-item label="Dashboard" icon="fa-dashboard" route="dashboard"></sd-nav-item>
-                    <sd-nav-item label="Henchmen" icon="fa-users" route="henchmen"></sd-nav-item>
-                    <sd-nav-item label="Quests" icon="fa-fort-awesome" route="quests"></sd-nav-item>
-                </sd-nav>
+                <div class="sidebar" ui-view="sidebar"></div>
             </sd-sidebar>
-            <div ui-view="body"><h1>This is in the body!</h1></div>
+            <div class="body" ui-view="body"></div>
         </div>
-        <sd-footer></sd-footer>
         <script src="/js/bundle.js"></script>
     </body>
 </html>

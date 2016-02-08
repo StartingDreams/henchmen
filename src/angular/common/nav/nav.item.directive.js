@@ -6,36 +6,22 @@ function navItemDirective(module) {
 
     function sdNav() {
 
-        var link = function(scope, element, attr, ctrl) {
+        var controller = function($scope) {
 
-            scope.show = scope.showLabel !== "false";
-
-            element.on("click", function(event) {
-                event.stopPropagation();
-                event.preventDefault();
-
-                scope.isActive = function() {
-                    return element === ctrl.activeElement;
-                };
-
-                scope.$apply(function() {
-                    ctrl.setActiveElement(element);
-                    ctrl.setRoute(scope.route);
-                });
-            });
+            var vm = this;
+            vm.show = $scope.showLabel !== "false";
+            vm.nav = $scope.nav;
 
         };
 
         return {
-            require: "^sdNav",
-            link: link,
+            controller: controller,
             restrict: "AE",
             replace: true,
+            controllerAs: "vm",
             scope: {
-                label: "@",
-                icon: "@",
                 showLabel: "@",
-                route: "@"
+                nav: "="
             },
             template: template
         };

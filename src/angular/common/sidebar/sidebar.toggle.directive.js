@@ -10,7 +10,6 @@ function sidebarToggleDirective(module) {
             var vm = this;
 
             vm.toggle = function() {
-                vm.sidebarVisible = !vm.sidebarVisible;
                 $rootScope.$broadcast("sd-sidebar-toggle");
             };
 

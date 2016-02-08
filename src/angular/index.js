@@ -1,18 +1,13 @@
 import angular from "angular";
 
-// initialize additional Angular
+// initialize additional Angular modules
 import "angular-ui-router";
+import "angular-animate";
+import "angular-gridster";
 
 // Register Angular "modules"
+import sdApp from "./app.module";
 import "./common";
-
-var sdApp = angular.module("sdApp", ["sdCommon"]);
-
-sdApp.run(function($rootScope) {
-    $rootScope.$on("sd-nav-item-selected", function(event, data) {
-        console.log("selected", data.route);
-    });
-
-});
+import "./henchmen";
 
 export default sdApp;
