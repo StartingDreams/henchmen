@@ -1,6 +1,12 @@
-<div class="widget widget-henchman">
-    <div sdh-widget title="vm.title" title-center="true">
-        <p>Some Content is here!</p>
-        <p>title is {{ vm.title }}</p>
+<div class="widget widget-henchman" ng-click="vm.startQuest()">
+    <div sdh-widget title="vm.henchman.name" title-center="true">
+        <dl>
+            <dt>Health</dt>
+            <dd>{{ vm.henchman.health }}%</dd>
+            <dt>Current Quest</dt>
+            <dd>{{ vm.onQuest() }}</dd>
+            <dt>Health</dt>
+            <dd>{{ vm.henchman.health }}</dd>
+        </dl>
     </div>
 </div>

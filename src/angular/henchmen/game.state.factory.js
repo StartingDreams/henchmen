@@ -1,6 +1,6 @@
 function sdhGameStateService(module) {
 
-    module.factory("sdhGameState", function(sdhQuestService) {
+    module.factory("sdhGameState", function(sdhQuestService, sdhHenchmanService) {
 
         var gameConfig = {
             starting: {
@@ -35,7 +35,7 @@ function sdhGameStateService(module) {
         }
 
         function addHenchman() {
-            //game.henchmen.push(sdhQuestService.create());
+            game.henchmen.push(sdhHenchmanService.create());
         }
 
         return {

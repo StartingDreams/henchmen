@@ -2,7 +2,7 @@ import faker from "faker";
 
 function sdhQuestService(module) {
 
-    module.factory("sdhQuestService", function() {
+    module.factory("sdhQuestService", function($timeout, $q) {
 
         var questId = 1;
 
@@ -15,7 +15,7 @@ function sdhQuestService(module) {
                 this._completed = false;
                 this._henchmenKilled = [];
                 this._henchmenCompleted = [];
-                this._duration = 10000;
+                this._duration = 30;
                 questId++;
             }
 
@@ -51,10 +51,21 @@ function sdhQuestService(module) {
                 return this._duration;
             }
 
-            attempt(henchman) {
-                if (henchman) {
-                    this.complete(henchman);
+            attemptQuest(henchman) {
+                var quest = this;
+
+                if (!henchman) {
+                    return $q.reject("Cannot attempt to complete a quest without a Henchman");
                 }
+
+                //$timeout(function() {
+                //    henchman.complete(quest);
+                //    henchman._onQuest = false;
+                //    henchman._currentQuest = null;
+                //}, quest.duration * 1000);
+                //
+                //this.complete(henchman);
+                //henchman._currentQuestTimout = $
             }
 
             complete(henchman) {
