@@ -21,10 +21,6 @@ gulp.task("copyMedia", function() {
 
 });
 
-gulp.task("test", function() {
-    // TODO: Setup testing.
-});
-
 gulp.task("build", ["copyHtml", "copyMedia"]);
 
 gulp.task("watch", ["build"], function() {
